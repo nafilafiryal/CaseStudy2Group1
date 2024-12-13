@@ -9,7 +9,8 @@ public class CaseStudy2 {
     static double latte = 22000;
     static double pullTea = 12000;
     static double friedNoodle = 18000;
-    static int j = 0;
+    static double orderBlack, orderLatte, orderTea, orderNoodle, totalOrder;
+    static int orderCount = 0;
 
     static void addOrder () {
         Scanner input = new Scanner(System.in);
@@ -59,51 +60,67 @@ public class CaseStudy2 {
                     System.out.println("Invalid menu.");
                     }
                 }
+                orderBlack = BlackCoffe * listOrder[row][0];
+                orderLatte = latte * listOrder[row][1];
+                orderTea = pullTea * listOrder[row][2];
+                orderNoodle = friedNoodle * listOrder[row][3];
 
-                double totalOrder = (BlackCoffe * listOrder[row][j]) + (latte * listOrder[row][1]) + (pullTea * listOrder[row][2]) + (friedNoodle * listOrder[row][3]);
+                double totalOrder = orderBlack + orderLatte + orderTea + orderNoodle;
 
                 System.out.println("\nOrder added successfully.");
                 System.out.println("Order total price: Rp" + totalOrder);
                 row++;
             }
 
-
-    static void showOrderList () {
-        
-    }
-    
-    static void Exit () {
-        System.out.println("Your order has been successful, please wait for your order.");
-    }
-    
-    public static void main(String[] args) {
-        System.out.println("Angga");
-        Scanner input = new Scanner(System.in);
-        int menu = 0;
-
-        while (menu != 3) {
-            System.out.println("\n===== MAIN MENU =====");
-            System.out.println("1. Add Order");
-            System.out.println("2. Show Order List");
-            System.out.println("3. Exit");
-            System.out.print("Select Menu: ");
-            menu = input.nextInt();
-            input.nextLine();
             
-            switch (menu) {
-                case 1:
-                    addOrder();
-                    break;
-                case 2:
-                    showOrderList();
-                    break;
-                case 3:
-                    Exit();
-                    break;  
-                default:
-                System.out.println("order not reccording");
-                break;
+            public static void showOrderList () {
+                Scanner sc = new Scanner(System.in);
+                if (orderCount == 0) {
+                    System.out.println("No orders yet.");
+                    return;
+                }
+                System.out.println("==== ORDER LIST ====");
+        
+                for (int i = 0; i < 10; i++) {
+                    System.out.println("name cutomer: " + customerName[i]);
+                    System.out.println("number table: " + tableNumber[i]);
+                    System.out.println("Order Details: ");
+                    System.out.println(" - Kopi Hitam x " + listOrder[row][0] + " = "  + "Rp " + orderBlack);
+                    System.out.println("-----------------------");
+                }
             }
-        }
-    }
+            
+            static void Exit () {
+                System.out.println("Your order has been successful, please wait for your order.");
+            }
+            
+            public static void main(String[] args) {
+                Scanner input = new Scanner(System.in);
+                int menu = 0;
+        
+                while (menu != 3) {
+                    System.out.println("\n===== MAIN MENU =====");
+                    System.out.println("1. Add Order");
+                    System.out.println("2. Show Order List");
+                    System.out.println("3. Exit");
+                    System.out.print("Select Menu: ");
+                    menu = input.nextInt();
+                    input.nextLine();
+                    
+                    switch (menu) {
+                        case 1:
+                            addOrder();
+                            break;
+                        case 2:
+                            showOrderList();
+                            break;
+                        case 3:
+                            Exit();
+                            break;  
+                        default:
+                        System.out.println("order not reccording");
+                        break;
+                    }
+                }
+            }
 }
