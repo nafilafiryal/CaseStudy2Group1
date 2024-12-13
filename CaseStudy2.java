@@ -67,6 +67,7 @@ public class CaseStudy2 {
     }
     
     public static void main(String[] args) {
+        System.out.println("Angga");
         Scanner input = new Scanner(System.in);
         int menu = 0;
         System.out.println("===== MAIN MENU =====");
