@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class CaseStudy2 {
     static  int listOrder[][] = new int[4][4];
-    static int row = 0;
 
     static void addOrder () {
         Scanner input = new Scanner(System.in);
@@ -63,7 +62,6 @@ public class CaseStudy2 {
     }
     
     static void Exit () {
-        
     }
     
     public static void main(String[] args) {
@@ -88,22 +86,3 @@ public class CaseStudy2 {
         }
     }
 }
-// if (menu == 1) {
-//     System.out.print("Enter the number of items for black coffe: ");
-//     listOrder[row][0] = input.nextInt();
-//     break;
-// } if (menu == 2) {
-//     System.out.print("Enter the number of items for latte: ");
-//     listOrder[row][1] = input.nextInt();
-//     break;
-// } if (menu == 3) {
-//     System.out.print("Enter the number of pull tea: ");
-//     listOrder[row][2] = input.nextInt();
-//     break;
-// } if (menu == 4) {
-//     System.out.print("Enter the number of fries noodle: ");
-//     listOrder[row][3] = input.nextInt();
-//     break;
-// } if (menu == 0) {
-//     System.out.println("Order added successfully.");
-// }
